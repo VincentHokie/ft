@@ -1,0 +1,7 @@
+flask
+mysqlclient
+Flask-MySQLdb
+
+flake8
+pylint
+pep8

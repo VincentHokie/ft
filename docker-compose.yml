@@ -1,0 +1,20 @@
+version: '3'
+services:
+  mysql:
+    container_name: mysql
+    image: mysql:5.7.21
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: fine_tune
+  web:
+    container_name: finetune_web
+    build: 
+      context: .
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mysql
+    expose:
+      - "5000"
+    links:
+      - mysql
